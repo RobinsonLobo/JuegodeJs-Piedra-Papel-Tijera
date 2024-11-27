@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piedra, Papel o Tijera</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <div id="login" class="form-container">
+            <h2>Iniciar Sesión</h2>
+            <input type="email" id="loginEmail" placeholder="Correo Electrónico" required>
+            <input type="password" id="loginPassword" placeholder="Contraseña" required>
+            <button id="loginButton">Iniciar Sesión</button>
+            <p>¿No tienes cuenta?</p>
+            <button id="showRegisterButton" class="bottom-button">Registrarse</button>
+        </div>
+
+        <div id="register" class="form-container hidden">
+            <h2>Registrarse</h2>
+            <input type="text" id="registerName" placeholder="Nombre" required>
+            <input type="email" id="registerEmail" placeholder="Correo Electrónico" required>
+            <input type="password" id="registerPassword" placeholder="Contraseña" required>
+            <button id="registerButton">Registrarse</button>
+            <p>¿Ya tienes cuenta?</p>
+            <button id="showLoginButton" class="bottom-button">Iniciar Sesión</button>
+        </div>
+
+        <div id="game" class="form-container hidden">
+            <h2>A Jugar: Piedra, Papel o Tijera</h2>
+            <div class="button-container">
+                <button class="game-button" data-choice="piedra">
+                    <span class="button-text">Piedra</span>
+                    <img src="Imagenes/roca.jpg" alt="Piedra" class="button-image">
+                </button>
+                <button class="game-button" data-choice="papel">
+                    <span class="button-text">Papel</span>
+                    <img src="Imagenes/papel.jpg" alt="Papel" class="button-image">
+                </button>
+                <button class="game-button" data-choice="tijera">
+                    <span class="button-text">Tijera</span>
+                    <img src="Imagenes/tijera.jpg" alt="Tijeras" class="button-image">
+                </button>
+            </div> 
+        </div>
+        
+        <div id="result" class="result-message">
+
+        </div>
+
+
+    <script src="scripts.js" defer></script>
+</body>
+</html>

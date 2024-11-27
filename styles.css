@@ -1,0 +1,200 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('Imagenes/fondo.jpg'); /* Cambia 'fondo.jpg' por el nombre de tu imagen */
+    background-size: contain ; /* Asegura que la imagen cubra todo el fondo */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    
+}
+
+.result-message {
+    text-align: center;
+    font-size: 18px;
+    margin-top: 20px;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#app {
+    background: rgb(85, 37, 161);
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+}
+
+.form-container {
+    margin-bottom: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+input {
+    width: 94%;
+    padding: 12px;
+    margin: 5px 0;
+    border-radius: 8px;
+}
+
+button#loginButton {
+    display: block; /* Hace que el botón se comporte como un elemento de bloque */
+    margin: 20px auto; 
+    padding: 11px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5%;
+    cursor: pointer;
+}
+button#registerButton {
+    display: block; /* Hace que el botón se comporte como un elemento de bloque */
+    margin: 20px auto; 
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5%;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #8f0c73;
+    
+}
+
+.bottom-button {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    
+    
+}
+
+.bottom-button:hover {
+    background-color: #218838;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+.game-button {
+    display: flex; /* Organiza el contenido en una columna */
+    flex-direction: column; /* Asegura que el texto esté arriba y la imagen abajo */
+    justify-content: center; /* Centra el contenido verticalmente */
+    align-items: center; /* Centra el contenido horizontalmente */
+    margin: 5px;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    background-color: #007bff; /* Conserva el color del botón */
+    width: 120px; /* Ancho del botón */
+    height: 150px; /* Alto del botón */
+    transition: transform 0.2s, opacity 0.2s;
+}
+
+/* Botón de "Piedra" con color específico */
+.game-button[data-choice="piedra"] {
+    background-color: #dc3545; 
+}
+
+/* Botón de "Papel" con color específico */
+.game-button[data-choice="papel"] {
+    background-color: #28a745;
+}
+
+/* Botón de "Tijeras" con color específico */
+.game-button[data-choice="tijera"] {
+    background-color: #007bff;
+}
+/* Texto dentro del botón */
+.button-text {
+    margin-bottom: 8%; /* Espacio entre el texto y la imagen */
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Imagen dentro del botón */
+.button-image {
+    width: 80%; /* Ajusta el tamaño de la imagen */
+    height: 70px; /* Ajusta el tamaño de la imagen */
+    object-fit: cover; /* Asegura que la imagen no se deforme */
+    border-radius: 5px; /* Opcional: bordes redondeados para la imagen */
+}
+.game-button:hover {
+    transform: scale(1.1);
+    opacity: 0.8;
+}
+
+#game h2 {
+    color: #ffcc00; /* Cambia el color del texto */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Sombra del texto */
+    font-size: 2em; /* Tamaño de fuente */
+    margin-bottom: 20px; /* Espacio inferior */
+    text-align: center; /* Centrar el texto */
+}
+
+#login-button {
+    display: block;
+    margin: 20px auto; /* Centra horizontalmente */
+}
+
+#login h2 {
+    color: #007BFF;
+    text-align: center;
+    font-size: 30px;
+
+}
+
+#login P {
+    color: #fcfcfc;
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 20px;
+
+}
+
+#register h2 {
+    color: #007BFF;
+    text-align: center;
+    font-size: 40px;
+}
+
+#register p {
+    color: #fcfcfc;
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 20px;
+
+}
+/* Tamaño estándar de las imágenes */
+.button-image {
+    width: 50px;
+    height: 50px;
+    transition: width 0.3s, height 0.3s;
+}
+
+/* Tamaño aumentado cuando se hace una selección */
+.selected-image {
+    width: 100px;
+    height: 100px;
+}
+
+
