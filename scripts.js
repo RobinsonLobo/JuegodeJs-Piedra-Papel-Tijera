@@ -54,6 +54,10 @@ document.addEventListener('DOMContentLoaded', () => {
 function handleLogin() {
     const email = document.getElementById('loginEmail').value;
     const password = document.getElementById('loginPassword').value;
+    if (!email || !password) {
+        alert('Por favor, completa todos los campos.');
+        return;
+    }
     const user = userManager.authenticate(email, password);
     if (user) {
         alert(`Bienvenido, ${user.name}!`);
@@ -67,6 +71,10 @@ function handleRegister() {
     const name = document.getElementById('registerName').value;
     const email = document.getElementById('registerEmail').value;
     const password = document.getElementById('registerPassword').value;
+    if (!name || !email || !password) {
+        alert('Por favor, completa todos los campos.');
+        return;
+    }
     userManager.registerUser(name, email, password);
     alert('Registro exitoso! Ahora puedes iniciar sesión.');
     showLogin();
@@ -103,15 +111,15 @@ function playGame(userChoice) {
     if (!choices.includes(userChoice)) {
         result = 'Opción no válida. Elige roca, papel o tijera.';
     } else if (userChoice === computerChoice) {
-        result = `¡Empate! Ambos eligieron <b>${userChoice}</b>.`;
+        result = `¡<span style="color: orange;">Empate</span>! Ambos eligieron <b>${userChoice}</b>.`;
     } else if (
         (userChoice === 'piedra' && computerChoice === 'tijera') ||
         (userChoice === 'papel' && computerChoice === 'piedra') ||
         (userChoice === 'tijera' && computerChoice === 'papel')
     ) {
-        result = `¡Ganaste! <b>${userChoice}</b> vence a <b>${computerChoice}</b>.`;
+        result = `¡<span style="color: lightgreen;">Ganaste</span>! <b>${userChoice}</b> vence a <b>${computerChoice}</b>.`;
     } else {
-        result = `¡Perdiste! <b>${computerChoice}</b> vence a <b>${userChoice}</b>.`;
+        result = `¡<span style="color: red;">Perdiste</span>! <b>${computerChoice}</b> vence a <b>${userChoice}</b>.`;
     }
 
     // Actualizar el resultado con texto e imágenes
@@ -128,12 +136,16 @@ function playGame(userChoice) {
     <p>${result}</p>
     `;
 
+        // Quitar la clase 'hidden' para mostrar el contenedor
+        resultContainer.classList.remove('hidden');
+    }
+
     // Añadir clase a las imágenes de resultado
     document.querySelectorAll('.result-image').forEach(image => {
         image.classList.add('selected-image'); //aplicar el tamaño aumentado también
     });
-}
 
+    
 
 
 

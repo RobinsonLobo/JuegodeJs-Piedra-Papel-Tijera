@@ -9,8 +9,8 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    
 }
+
 
 .result-message {
     text-align: center;
@@ -22,27 +22,58 @@ body {
     border-radius: 5px;
 }
 
+#result {
+    max-width: 400px; /* Máximo ancho del contenedor */
+    max-height: 400px;
+    padding: 6px;
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
+    overflow: auto; /* Asegura que el contenido no se desborde */
+}
+
+.result-image {
+    max-width: 100px; /* Ajusta el tamaño máximo del ancho */
+    max-height: 100px; /* Ajusta el tamaño máximo del alto */
+    display: block;
+    margin: 0 auto; /* Centra las imágenes */
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+
+.hidden {
+    display: none;
+}
+
+
 #app {
     background: rgb(85, 37, 161);
     padding: 20px;
     border-radius: 20px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     display: flex;
+    flex-direction: column; /* Asegura que los elementos se apilen verticalmente */
+    overflow: hidden; /* Evita que los elementos sobresalgan */
+    
+    
 }
 
 .form-container {
     margin-bottom: 20px;
 }
 
-.hidden {
-    display: none;
+.form-container input {
+    margin-bottom: 15px;
+}
+
+.form-container button { 
+    margin-bottom: 15px;
 }
 
 input {
-    width: 94%;
+    width: 100%;
     padding: 12px;
-    margin: 5px 0;
-    border-radius: 8px;
+    margin: 10px 0;
+    border-radius: 5px;
+    box-sizing: border-box;
 }
 
 button#loginButton {
@@ -54,6 +85,7 @@ button#loginButton {
     border: none;
     border-radius: 5%;
     cursor: pointer;
+    box-sizing: border-box;
 }
 button#registerButton {
     display: block; /* Hace que el botón se comporte como un elemento de bloque */
@@ -64,12 +96,17 @@ button#registerButton {
     border: none;
     border-radius: 5%;
     cursor: pointer;
+    box-sizing: border-box;
 }
 
-button:hover {
-    background-color: #8f0c73;
-    
+button#loginButton:hover,
+button#registerButton:hover {
+    background-color: #8f0c73; 
+    box-sizing: border-box;
+    transform: scale(1.05); /* Opcional: efecto de zoom */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transición suave */
 }
+    
 
 .bottom-button {
     margin-top: 10px;
@@ -80,18 +117,21 @@ button:hover {
     border-radius: 5px;
     cursor: pointer;
     width: 100%;
+    box-sizing: border-box;
     
     
 }
 
 .bottom-button:hover {
     background-color: #218838;
+    box-sizing: border-box;
 }
 
 .button-container {
     display: flex;
     justify-content: center;
     margin-top: 20px;
+    box-sizing: border-box;
 }
 .game-button {
     display: flex; /* Organiza el contenido en una columna */
@@ -108,6 +148,7 @@ button:hover {
     width: 120px; /* Ancho del botón */
     height: 150px; /* Alto del botón */
     transition: transform 0.2s, opacity 0.2s;
+    
 }
 
 /* Botón de "Piedra" con color específico */
@@ -137,6 +178,7 @@ button:hover {
     height: 70px; /* Ajusta el tamaño de la imagen */
     object-fit: cover; /* Asegura que la imagen no se deforme */
     border-radius: 5px; /* Opcional: bordes redondeados para la imagen */
+    box-sizing: border-box;
 }
 .game-button:hover {
     transform: scale(1.1);
@@ -154,10 +196,11 @@ button:hover {
 #login-button {
     display: block;
     margin: 20px auto; /* Centra horizontalmente */
+    
 }
 
 #login h2 {
-    color: #007BFF;
+    color: #5ca3f0;
     text-align: center;
     font-size: 30px;
 
@@ -172,7 +215,7 @@ button:hover {
 }
 
 #register h2 {
-    color: #007BFF;
+    color: #63a0e2;
     text-align: center;
     font-size: 40px;
 }
@@ -189,6 +232,7 @@ button:hover {
     width: 50px;
     height: 50px;
     transition: width 0.3s, height 0.3s;
+    box-sizing: border-box;
 }
 
 /* Tamaño aumentado cuando se hace una selección */
@@ -196,5 +240,19 @@ button:hover {
     width: 100px;
     height: 100px;
 }
+#login, #register, #game {
+    border: 2px solid #0ed2ec;
+    border-width: 2px;
+    border-radius: 20px;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+.selected-image {
+    transform: scale(1.5); /* Tamaño aumentado */
+    opacity: 0.9;
+}
+
+
+
 
 
